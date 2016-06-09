@@ -1,0 +1,48 @@
+---
+layout: main
+---
+<div class="container">	
+	<div class="row">
+		<div class="col-sm-8 col-xs-12">
+			<h1 class="page-title">{{page.title}}{% if  'Manifiesto' contains page.title %}: Punto {{page.id}}{% endif %}
+			</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div id="center" class="col-sm-8 col-xs-12">
+		<h4 class="page-subtitle">{{page.description}}</h4>
+		{% if  'Manifiesto' contains page.title %}
+			<p>{{content}}</p>
+			<div class="separator"></div>
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+					this.page.url = "{{site.url}}{{page.permalink}}";
+					this.page.identifier = "{{page.permalink | remove: '\' }}";
+				};
+				(function() {  
+					var d = document, s = d.createElement('script');
+					s.src = '//encuentroporlaeducacion.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+		{% else %}
+			{% for file in site.memoria %}
+				{% if file.title contains page.title %}
+					{{file.excerpt}}
+						{% break %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		<div class="separator"></div>
+		</div>
+		<div class="col-sm-4 col-xs-12 cont">
+		<h3 class="enlaces">Enlaces recomendados</h3>
+			<h4 class="enlace"><a href="{{site.url}}/encuesta" ><span class="glyphicon glyphicon-stats main-item"></span>Encuesta al profesorado</a></h4>
+			<h4  class="enlace"><a href="{{site.url}}/entrevistas"><span class="glyphicon glyphicon-comment main-item"></span>Entrevistas</a></h4>
+			<div class="separator2"></div>
+			<h4 class="enlace"><a href="{{site.url}}/memoria/introduccion" ><span class="glyphicon glyphicon-file main-item"></span>Memoria</a></h4>
+		</div>
+	</div>
+</div>

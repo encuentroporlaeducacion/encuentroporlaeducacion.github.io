@@ -1,0 +1,54 @@
+---
+layout: main
+---
+{% assign apartados={{site.memoria-apartados | split:','}} %}
+
+<div class="container">	<!--Main container-->
+	<h1 class="page-title">Memoria<a href="{{site.url}}/downloads/memoria.pdf"><span class="download  glyphicon glyphicon-download-alt" title="Descargar memoria en PDF"></span></a></h1>
+	<h4 class="page-subtitle">Análisis del sistema educativo español, manifiesto de mejora y creación de una plataforma de encuentro ciudadano</h4>
+	<a href="#index" class="btn btn-md btn-dafault visible-xs" style="margin:15px;" data-toggle="collapse">Mostrar índice <span class="caret"></span></a>
+	<div class="row">
+		<div id="left-bar" class="col-sm-4 col-xs-12">
+		<div id="index" class="hidden-xs">
+		<h2>Índice</h2>
+			{% for apartado in apartados %}
+				{% if apartado contains page.title %}
+					<!--Are we in this page?-->
+					{% assign next_index= forloop.index  %}
+					{% assign prev_index= forloop.index | minus: 2  %}
+					{% assign length= forloop.length %}
+					
+					{% assign page_class = 'index-current' %}
+				{% else %}
+					{% assign page_class = '' %}
+				{% endif %}
+				
+				{% if apartado contains '*' %}
+					<a class="index-header {{page_class}}" href="{{site.url}}/memoria/{% include standarize.html name=apartado %}#center">{{apartado | remove: '*'}}</a>
+				{% else %}
+					<a class="index-item {{page_class}}" href="{{site.url}}/memoria/{%include standarize.html name=apartado %}#center">{{apartado}}</a>
+				{% endif %}
+			{% endfor %}
+			</div>
+		</div>
+		<div id="center" class="col-sm-8 col-xs-12 cont">
+			<h2>{{page.title}}</h2>
+			{{ content }}	
+			<div class="separator"></div>
+			<div class="buttons">
+				{% if prev_index <> -1 %}
+					{% assign prev= apartados[prev_index] %}
+					<!--previous-->
+					<a href="{{ site.url }}/memoria/{% include standarize.html name=prev %}#center" class="btn btn-default btn-md"><span class="glyphicon glyphicon-menu-left"></span>&nbsp {{prev | remove: '*' | truncatewords: '6'}}</a>
+				{% endif %}
+				{% if next_index < length %}
+					{% assign next= apartados[next_index] %}
+					<!--next-->
+					<a href="{{ site.url }}/memoria/{% include standarize.html name=next %}#center" class="btn btn-default btn-md"></span>{{next | remove: '*' | truncatewords: '6'}} &nbsp<span class="glyphicon glyphicon-menu-right"></a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Ignorados: planificación del tiempo en Estructura del proyecto; y Agradecimeintos 
+Falta: Encuesta--!>

@@ -1,0 +1,52 @@
+---
+layout: main
+title: ¿Quiénes somos?
+description: Acerca de nosotros
+permalink: \nosotros
+---
+<div class="container">
+		<h1 class="page-title">{{page.title}}</h1>
+		<h4 class="page-subtitle">{{page.description}}</h4>
+		<p>La plataforma de Encuantro por la Educación surge a raíz de la tesis del programa formativo <a href="http://www.elufv.com/"> Escuela de Liderazgo Universitario</a>, impartido por la<a href="http://www.ufv.es"> Universidad Frnacisco de Vitoria</a>, en Madrid.</p>
+		<p>El equipo lo formamos los siguientes componentes:</p>
+		<div class="row">
+			<div class="col-sm-2 col-xs-12">
+				{% include image.html source="oscar.jpg" small="yes" position="center" rounded="yes"%}
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<h3>Oscar José Pellicer Valero</h3>
+				Grado en Ingeniería en Tecnolgías Industriales<br>
+				Grado en Ingeniería Informática<br>
+				Correo: {% include mail.html mail="adasd" %}
+			</div>
+			<div class="col-sm-2 col-xs-12">
+				{% include image.html source="ruben.jpg" small="yes" position="center" rounded="yes"%}
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<h3>Rubén Gayarre del Cerro</h3>
+				Grado en Arquitectura<br>
+				Correo: {% include mail.html mail="afsdfsd" %}
+			</div>
+		</div>
+		<div class="margin-bottom"></div>
+		<div class="row">
+			<div class="col-sm-2 col-xs-12">
+				{% include image.html source="ruben.jpg" small="yes" position="center" rounded="yes"%}
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<h3>Adriana Pilar Yagüe Horno</h3>
+				<p>Grado en Biotecnología<br>
+				Correo: {% include mail.html mail="fafdsf" %}</p>
+			</div>
+			<div class="col-sm-2 col-xs-12">
+				{% include image.html source="oscar.jpg" small="yes" position="center" rounded="yes"%}
+			</div>
+			<div class="col-sm-4 col-xs-12">
+				<h3>Edgar Jiménez García</h3>
+				<p>Doble grado en ciencias políticas y derecho<br>
+				Correo: {% include mail.html mail="adfsdfs" %}</p>
+			</div>
+		</div>
+		<div class="separator"></div>
+		{% include image.html source="nosotros.jpg" small="yes" position="center" %}
+	</div>
