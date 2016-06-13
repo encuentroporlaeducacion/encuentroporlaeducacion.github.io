@@ -165,9 +165,10 @@ a2a_config.locale = "es";
 <!--Page dependent scripts -->
 
 
+<script src='https://www.google.com/recaptcha/api.js'></script>
 	  <script>
 		function validateForm(){
-		  submitHandler: function () {
+		  submitHandler: {
 			var response = grecaptcha.getResponse();
 			//recaptcha failed validation
 			if (response.length == 0) {
