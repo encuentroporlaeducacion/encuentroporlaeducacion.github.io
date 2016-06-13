@@ -27,6 +27,9 @@ h1, h2, h3, h4 {
 
 
 /*BASIC STYLING*/
+.logo{
+	max-height: 150px !important;
+}
 blockquote{
 	font-style: italic;
 	font-size: 15px;
@@ -112,6 +115,13 @@ h3{
 
 
 /*NAV*/
+.current-nav{
+	background-color: white;
+	color: grey!important;
+}
+.current-nav:hover{
+	background-color: white!important;
+}
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #009ad5;
 }
@@ -206,7 +216,7 @@ nav {
 	.jumbotron h1{
 		font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
 		font-weight: 200;
-		font-size: 40px;
+		font-size: 35px;
 		text-transform: uppercase;
 		text-align: center;
 	}
@@ -341,10 +351,13 @@ nav {
 	border-bottom: 1px solid grey;
 }
 .no-border, .no-border:active, .no-border:hover{
-	border:none;
+	border:none !important;
 }
 .gray{
 	color: grey;
+}
+.margin-left{
+	margin-left: 10px;
 }
 .margin-bottom{
 	margin-bottom: 30px;
@@ -457,20 +470,6 @@ img{
 	padding-bottom: 15px;
 }
 
-/*IMAGE GALLERY*/
-.gallery{
-    text-align: center;
-    margin: auto;
-}
-.img-gallery {
-    display: inline-block;
-    margin: 10px;
-}
-.lb-close, .lb-close:active, .lb-close:hover{
-	border: none;
-}
-
-
 /*DL (Definition list)*/
 @media (min-width: 768px) {
   .dl-horizontal dt {
@@ -544,4 +543,10 @@ footer{
 	color: #BFCBE7;
 	display: inline-block;
 	padding-right: 20px;
+}
+.invisible-manifiesto{
+	display: none;
+}
+.manifiesto-buttons{
+	display: inline-block;
 }
