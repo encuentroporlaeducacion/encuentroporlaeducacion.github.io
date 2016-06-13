@@ -88,7 +88,7 @@
 	<h1 class="page-title">Contacto</h1>
 	<h4 class="page-subtitle">Contacta con nosotros</h4>
 	<div class="separator"></div>
-	<form class="form-horizontal" method="post">
+	<form class="form-horizontal" method="post" onsubmit="return validateForm()">
 	  <div class="form-group">
 		<label class="col-sm-2 control-label">Nombre</label>
 		<div class="col-sm-10">
@@ -165,24 +165,21 @@ a2a_config.locale = "es";
 <!--Page dependent scripts -->
 
 
-	<script src='https://www.google.com/recaptcha/api.js'></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 	  <script>
-		$("#contactForm").validate({
+		function validateForm(){
 		  submitHandler: function (form) {
 			var response = grecaptcha.getResponse();
 			//recaptcha failed validation
 			if (response.length == 0) {
-			  $('#recaptcha-error').show();
+			  alert('Debe completar la comprobación antiSPAM');
 			  return false;
 			}
 			  //recaptcha passed validation
 			else {
-			  $('#recaptcha-error').hide();
 			  return true;
 			}
 		  }
-		});
+		}
 	  </script>
 
   <script>
