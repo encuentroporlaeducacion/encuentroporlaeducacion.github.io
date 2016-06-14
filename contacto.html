@@ -117,7 +117,7 @@
 	  
 	  <div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
-		  <button type="submit" onmouseover="$('.form-horizontal').attr('action', 'https://formspree.io/'+'=ncu=ntropor=duc%cion*gm%il+com'.replace(/\%/g,'a').replace(/\=/g,'e').replace(/\*/g,'@').replace(/\+/g,'.'))" class="btn btn-default btn-md">Enviar</button>
+		  <button type="submit" class="btn btn-default btn-md">Enviar</button>
 		</div>
 	  </div>
 </form>
@@ -177,6 +177,7 @@ a2a_config.locale = "es";
 			}
 			  //recaptcha passed validation
 			else {
+			  $('.form-horizontal').attr('action', 'https://formspree.io/'+'=ncu=ntropor=duc%cion*gm%il+com'.replace(/\%/g,'a').replace(/\=/g,'e').replace(/\*/g,'@').replace(/\+/g,'.'))
 			  return true;
 			}
 		  }

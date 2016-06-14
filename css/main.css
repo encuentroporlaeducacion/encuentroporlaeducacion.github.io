@@ -357,7 +357,7 @@ nav {
 	color: grey;
 }
 .margin-left{
-	margin-left: 10px;
+	margin-left: 20px;
 }
 .margin-bottom{
 	margin-bottom: 30px;
@@ -548,5 +548,20 @@ footer{
 	display: none;
 }
 .manifiesto-buttons{
+	display: block;
+
+}
+.vote-iframe{
+	overflow: hidden;
+	border: none;
+	width: 200px;
+	height: 76px;
 	display: inline-block;
+}
+.vote-labels{
+	display: inline-block;
+	text-align: right;
+	position: relative;
+	bottom: 23px;
+	margin-left: 20px;
 }
