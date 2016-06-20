@@ -191,5 +191,17 @@ a2a_config.locale = "es";
 		}, time);
 	}
   </script>
+  	<script>
+		function showMore(id){
+			$('#ref_'+id+'_orig').fadeOut(200, function(){
+				$('#ref_'+id).fadeIn(200);
+			});
+		}
+		function showLess(id){
+			$('#ref_'+id).fadeOut(200, function(){
+				$('#ref_'+id+'_orig').fadeIn(200);
+			});
+		}
+	</script>
   </body>
 </html>

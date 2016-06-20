@@ -1170,7 +1170,13 @@ a2a_config.locale = "es";
 <!--Page dependent scripts -->
 
 
-	<script>
+  <script>
+	function scroll_(where, time) {
+		$('html, body').animate({
+		}, time);
+	}
+  </script>
+  	<script>
 		function showMore(id){
 			$('#ref_'+id+'_orig').fadeOut(200, function(){
 				$('#ref_'+id).fadeIn(200);
@@ -1182,13 +1188,5 @@ a2a_config.locale = "es";
 			});
 		}
 	</script>
-
-  <script>
-	function scroll_(where, time) {
-		$('html, body').animate({
-			scrollTop: $(where).offset().top
-		}, time);
-	}
-  </script>
   </body>
 </html>
